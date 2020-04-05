@@ -1,0 +1,19 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+
+    <h3 class="mb-3 text-center">Update Recipe</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="recipeData.name" class="form-control" placeholder="Title">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="recipeData.description" class="form-control" placeholder="Description">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateRecipe()">Update Recipe</button>
+    </div>
+
+  </div>
+</div>

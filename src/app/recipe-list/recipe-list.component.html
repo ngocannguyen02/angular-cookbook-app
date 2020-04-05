@@ -1,0 +1,42 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no recipe -->
+  <div class="no-data text-center" *ngIf="Recipe.length == 0">
+    <p>There is no recipe added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-recipe">Add Recipe</button>
+  </div>
+
+  <!-- Recipes list table, it hides when there is no recipe -->
+  <div *ngIf="Recipe.length !== 0">
+    <h3 class="mb-3 text-center">Recipes List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Recipe Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Ingredients</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recipe of Recipe">
+            <td>{{recipe.id}}</td>
+            <td>{{recipe.title}}</td>
+            <td>{{recipe.description}}</td>
+            <td>
+              <div *ngFor="let ingredient of recipe.ingredients">{{ingredient.name}} - {{ingredient.quantity}}</div>
+            </td>
+            <td>
+              <span class="edit" routerLink="/recipe-edit/{{recipe.id}}">Edit</span>
+              <span class="delete" (click)="deleteRecipe(recipe.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

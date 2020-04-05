@@ -1,0 +1,31 @@
+{
+  "recipes": [{
+    "id": 1,
+    "title": "Steak Frites",
+    "description": "Classical french dish",
+    "ingredients": [
+      {
+        "name": "French fries",
+        "quantity": "150g"
+      },
+      {
+        "name": "Steak",
+        "quantity": "1kg"
+      }
+    ]
+  }, {
+    "id": 2,
+    "title": "Pizza",
+    "description": "Classical Italien dish",
+    "ingredients": [
+      {
+        "name": "Cheese",
+        "quantity": "150g"
+      },
+      {
+        "name": "Tomato sauce",
+        "quantity": "1kg"
+      }
+    ]
+  }]
+}
