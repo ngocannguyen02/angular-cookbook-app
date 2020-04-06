@@ -10,6 +10,23 @@
       <input type="text" [(ngModel)]="recipeDetails.description" class="form-control" placeholder="Description">
     </div>
 
+    <table class="form-group">
+      <ng-container *ngIf="recipeDetails.ingredients.length > 1">
+      <tr *ngFor="let ingredient of recipeDetails.ingredients;let i = index;">
+         <td *ngIf="i != 0">{{ i }}</td>
+         <td>{{ingredient.name}}</td>
+         <td>{{ingredient.quantity}}</td>
+      </tr>
+      </ng-container>
+      <tr>
+        <td><input type="text" [(ngModel)]="ingredientDetails.name" placeholder="Ingredient name"></td>
+         <td><input type="text" [(ngModel)]="ingredientDetails.quantity" placeholder="Ingredient quantity"></td>
+      </tr>
+      <tr class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="addIngredient()">Add Ingredient</button>
+      </tr>
+    </table>
+
     <div class="form-group">
       <button class="btn btn-success btn-lg btn-block" (click)="addRecipe()">Create Recipe</button>
     </div>
