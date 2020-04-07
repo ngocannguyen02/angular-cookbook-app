@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../shared/rest-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Ingredient } from '../shared/recipe';
 
 @Component({
   selector: 'app-recipe-details',
@@ -32,6 +33,18 @@ export class RecipeEditComponent implements OnInit {
         this.router.navigate(['/recipes-list']);
       });
     }
+  }
+
+  addIngredient() {
+    this.recipeData.ingredients.push(this.createNewIngredient(this.recipeData.name, this.recipeData.quantity));
+  }
+
+  createNewIngredient(name: string, quantity: string): Ingredient {
+
+    return {
+      name: name.toString(),
+      quantity: quantity.toString()
+    };
   }
 
 }
